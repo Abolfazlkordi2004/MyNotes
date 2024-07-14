@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class Loginview extends StatefulWidget {
-  const Loginview({super.key});
+class registerview extends StatefulWidget {
+  const registerview({super.key});
 
   @override
-  State<Loginview> createState() => _LoginviewState();
+  State<registerview> createState() => _LoginviewState();
 }
 
-class _LoginviewState extends State<Loginview> {
+class _LoginviewState extends State<registerview> {
   late final TextEditingController _email;
   late final TextEditingController _password;
 
@@ -30,7 +30,7 @@ class _LoginviewState extends State<Loginview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Regsiter'),
       ),
       body: Column(
         children: [
@@ -57,17 +57,17 @@ class _LoginviewState extends State<Loginview> {
 
               print(UserCredential);
             },
-            child: Text('Login'),
+            child: Text('Register'),
           ),
           TextButton(
             onPressed: () {
               Navigator.of(context).pushNamedAndRemoveUntil(
-                '/register/',
+                '/Login/',
                 (route) => true,
               );
             },
-            child: Text('Not register yet! register here'),
-          ),
+            child: Text('Already have account! login here'),
+          )
         ],
       ),
     );
